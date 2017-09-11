@@ -27,7 +27,7 @@ public class SampleHandler extends AbstractHandler {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		MessageDialog.openInformation(
 				window.getShell(),
-				"zgit插件",
+				"zgit插件『V1.0.0』",
 				"Hello, Eclipse world zgit");
 		return null;
 	}

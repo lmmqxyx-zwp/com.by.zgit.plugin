@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
+	<!-- 此文件是Eclipse内核的接口 -->
    <extension
          point="org.eclipse.ui.commands">
       <category
@@ -51,12 +51,38 @@
                id="com.by.zgit.plugin.toolbars.sampleToolbar">
             <command
                   commandId="com.by.zgit.plugin.commands.sampleCommand"
-                  icon="icons/sample.gif"
+                  icon="icons/zgit.ico"
                   tooltip="Say hello world"
                   id="com.by.zgit.plugin.toolbars.sampleCommand">
             </command>
          </toolbar>
       </menuContribution>
    </extension>
-
+   <!-- 添加一个透视图 -->
+   <!-- org.eclipse.ui.perspectives：透视图的扩展点 -->
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            name="zgit plugin 透视图"
+            icon="icons/perspective_drawing.ico"
+            class="com.by.zgit.plugin.ZGITPerspectiveDrawing"
+            id="com.by.zgit.plugin.ZGITPerspectiveDrawing">
+      </perspective>
+   </extension>
+   <!-- 视图的 -->
+   <extension point="org.eclipse.ui.views">
+      <view
+             name="zgit视图一"
+             icon="icons/view/one.ico"
+             category="com.glkxh.myplugin.view"
+             class="com.by.zgit.plugin.view.ZGITViewOne"
+             id="com.by.zgit.plugin.view.ZGITViewOne">
+      </view>
+      <view
+             name="zgit视图二"
+             icon="icons/view/two.ico"
+             category="com.glkxh.myplugin.view"
+             class="com.by.zgit.plugin.view.ZGITViewTwo"
+             id="com.by.zgit.plugin.view.ZGITViewTwo">
+      </view>
+   </extension>
 </plugin>
